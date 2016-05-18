@@ -6,7 +6,7 @@ gulp.task('sass',function(){
   return gulp.src('_www/sass/*.sass')
         .pipe(plumber())
         .pipe(sass({outputStyle: 'compact'}))
-        .pipe(gulp.dest('./.'))
+        .pipe(gulp.dest('_www/'))
 });
 
 gulp.task('watch',function(){
