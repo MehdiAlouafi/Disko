@@ -25,5 +25,37 @@
 // };
 
 $(function(){
+  var sliders  = $('.slider__slide'),
+      previous = $('.slider__control--previous'),
+      next     = $('.slider__control--next');
+  var nextSlide, previousSlide,i;
+  i = 0;
+  TweenMax.set([sliders[1],sliders[2]],{xPercent: 100})
+  nextSlide = function(){
+    if(i < sliders.length - 1){
+
+      i++;
+      console.log(i);
+      TweenMax.to(sliders[i],1,{xPercent: 0, ease:Power2.easeOut})
+      TweenMax.to(sliders[i-1],1,{xPercent: -100, ease:Power2.easeOut})
+    } else if (i === sliders.length - 1){
+      i = 0;
+      TweenMax.to([sliders[i]],1,{xPercent: 0,ease:Power0.easeOut})
+      TweenMax.to([sliders[i+1]],1,{xPercent: 100,ease:Power0.easeOut})
+      TweenMax.to([sliders[i+2]],0.6,{xPercent: 100,ease:Power0.easeOut})
+    }
+  };
+
+  previousSlide = function(){
+    if(i > 0){
+      i--;
+      console.log(i);
+      TweenMax.to(sliders[i+1],1,{xPercent: 100, ease:Power2.easeOut})
+      TweenMax.to(sliders[i],1,{xPercent: 0, ease:Power2.easeOut})
+    }
+  };
+  
+  next.click(nextSlide)
+  previous.click(previousSlide)
 
 })

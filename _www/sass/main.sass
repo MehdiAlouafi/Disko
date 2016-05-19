@@ -1,4 +1,98 @@
+@import 'base-style'
+
+// Color Variable
+
+$black: black
+$white: #fff
+$grey: #D1D1D1
+$greyBold: #9C9C9C
+
+// C'est parti !
+
 *
   box-sizing: border-box
   font-family: 'Didact Gothic', sans-serif
-  color: blue
+
+.logo
+  height: 100px
+  width: 100px
+  float: left
+
+header
+  position: relative
+  padding: 10px 50px 60px 50px
+.header__kicker
+  max-width: 805px
+  margin: 0 auto
+  padding: 10px 0 0 20px
+  h1, p
+    text-transform: uppercase
+    margin: 0
+    transform: translate(5px,15px)
+  p
+    color: $grey
+    margin: 0
+.main_nav
+  width: 100%
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 0
+  text-align: center
+  background-color: $black
+  padding: 5px 0
+  &__item
+    display: inline-block
+    &:last-of-type a::after
+      display: none
+  &__link
+    color: $white
+    padding: 5px 15px
+    display: block
+    position: relative
+    &::after
+      content: ' '
+      display: block
+      width: 2px
+      height: 18px
+      background-color: $white
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+
+.slider
+  height: 700px
+  max-width: 1100px
+  margin: 0 auto
+  background-color: $greyBold
+  margin: 30px auto
+  position: relative
+  padding: 25px
+  overflow: hidden
+  &__control
+    position: absolute
+    height: 70px
+    width: 110px
+    top: 50%
+    transform: translateY(-50%)
+    background-color: hotpink
+    z-index: 9999
+    cursor: pointer
+    &--previous
+      left: 0
+    &--next
+      right: 0
+  &__slide
+    height: 100%
+    width: 100%
+    position: absolute
+    left: 0
+    top: 0
+    z-index: 1
+    &:nth-child(3)
+      background-color: red
+    &:nth-child(4)
+      background-color: blue
+    &:nth-child(5)
+      background-color: violet
