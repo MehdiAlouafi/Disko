@@ -25,38 +25,62 @@
 // };
 'use strict',
 $(function(){
-  // var sliders  = $('.slider__slide'),
-  //     previous = $('.slider__control--previous'),
-  //     next     = $('.slider__control--next');
-  // var nextSlide, previousSlide,i;
-  // i = 0;
-  // TweenMax.set([sliders[1],sliders[2]],{xPercent: 100})
-  // nextSlide = function(){
-  //   if(i < sliders.length - 1){
-  //
-  //     i++;
-  //     console.log(i);
-  //     TweenMax.to(sliders[i],1,{xPercent: 0, ease:Power2.easeOut})
-  //     TweenMax.to(sliders[i-1],1,{xPercent: -100, ease:Power2.easeOut})
-  //   } else if (i === sliders.length - 1){
-  //     i = 0;
-  //     TweenMax.to([sliders[i]],1,{xPercent: 0,ease:Power0.easeOut})
-  //     TweenMax.to([sliders[i+1]],1,{xPercent: 100,ease:Power0.easeOut})
-  //     TweenMax.to([sliders[i+2]],0.6,{xPercent: 100,ease:Power0.easeOut})
-  //   }
-  // };
-  //
-  // previousSlide = function(){
-  //   if(i > 0){
-  //     i--;
-  //     console.log(i);
-  //     TweenMax.to(sliders[i+1],1,{xPercent: 100, ease:Power2.easeOut})
-  //     TweenMax.to(sliders[i],1,{xPercent: 0, ease:Power2.easeOut})
-  //   }
-  // };
-  //
-  // next.click(nextSlide)
-  // previous.click(previousSlide)
+  var sliders  = $('.slider__slide'),
+      previous = $('.slider__control--previous'),
+      next     = $('.slider__control--next');
+  var nextSlide, previousSlide,i, currentSlide;
+  i = 0;
+  currentSlide = i;
+  // Set all the slides in their default position which is outsite of the view except the first one.
+  TweenMax.set([sliders[1],sliders[2]],{xPercent: 100})
+  slideInnerAnimation = function(){
+    switch (currentSlide) {
+      case 0:
+      console.log('première slide IN')
+      break;
+      case 1:
+      console.log('deuxième slide IN')
+      break;
+      case 2:
+      console.log('troisième slide IN')
+      break;
+      default:
+        console.log("oops");
+    }
+    console.log("lol");
+  }
+  nextSlide = function(){
+    if(i < sliders.length - 1){
+
+      i++;
+      currentSlide = i;
+      TweenMax.to(sliders[i],1,{xPercent: 0, ease:Power2.easeOut})
+      TweenMax.to(sliders[i-1],1,{xPercent: -100, ease:Power2.easeOut})
+    } else if (i === sliders.length - 1){
+      i = 0;
+      TweenMax.to([sliders[i]],1,{xPercent: 0,ease:Power0.easeOut})
+      TweenMax.to([sliders[i+1]],1,{xPercent: 100,ease:Power0.easeOut})
+      TweenMax.to([sliders[i+2]],0.6,{xPercent: 100,ease:Power0.easeOut})
+    }
+    console.log(currentSlide);
+  };
+
+  previousSlide = function(){
+    // console.log(currentSlide);
+
+    if(i > 0){
+      i--;
+      console.log(i);
+      TweenMax.to(sliders[i+1],1,{xPercent: 100, ease:Power2.easeOut})
+      TweenMax.to(sliders[i],1,{xPercent: 0, ease:Power2.easeOut})
+    }
+    currentSlide = i;
+  };
+  // Bringin' the magic in !
+  next.click(nextSlide)
+  previous.click(previousSlide)
+  // setInterval(slideInnerAnimation,300)
+  // Ce bout de code permet au label de rester à sa position quand l'input est focus si ce dernier a une valeur entrée
   $('#input-01').focusout(function(){
     $inputVal = $(this).val();
     if($inputVal === ""){
@@ -67,6 +91,8 @@ $(function(){
 
     }
   })
+  // Ce bout de code permet au textarea de rester avec un fond blanc si et seulement si une valeur y est existante
+
   $('textarea').focusout(function(){
     $textAreaVal = $(this).val();
     if($textAreaVal === ""){
