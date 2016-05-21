@@ -106,10 +106,37 @@ header
         top: 50%
         left: 50%
         transform: translate(-50%,-50%)
+        textarea
+          border: none
+          max-width: 320px
+          resize: none
+          padding: 15px
+          margin-top: 25px
+          background-color: transparent
+          transition: background-color 0.3s ease-in-out
+          border-radius: 2px
+          &:focus,
+          &.has-value
+            outline: none
+            background-color: $white
+        &::after
+          content: attr(content)
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%)
+          color: #fff
+          font-size: 30px
+          width: 100%
+          text-align: center
+          pointer-events: none
 
 
 .input-group
   position: relative
+  text-align: center
+  margin: 0 auto
+  max-width: 320px
   &__field
     padding: 15px 25px 15px 5px
     position: relative
@@ -119,6 +146,7 @@ header
     border-bottom:  2px solid #A0DF6D
     transition: all 0.3s ease-in-out
     color: $white
+    width: 100%
     &:focus + .input-group__label,
     &.has-value + .input-group__label
       bottom: 60px

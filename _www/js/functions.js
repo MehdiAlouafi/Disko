@@ -67,6 +67,16 @@ $(function(){
 
     }
   })
+  $('textarea').focusout(function(){
+    $textAreaVal = $(this).val();
+    if($textAreaVal === ""){
+      $('textarea').removeClass('has-value');
+    } else {
+      $('textarea').addClass('has-value');
+      console.log('bonjour');
+
+    }
+  })
   // var svgImage = new Image();
   //   svgImage.src= 'http://image005.flaticon.com/159/svg/136/136262.svg'
   // const canvas = document.getElementById('canvas'),
