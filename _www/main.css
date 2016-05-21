@@ -10,7 +10,7 @@ p { font-size: 16px; }
 
 a { text-decoration: none; }
 
-input[type="text"]:focus, input[type="text"]:active { border: none; -webkit-box-shadow: none; box-shadow: none; outline: none; }
+input[type="text"]:focus, input[type="text"]:active { -webkit-box-shadow: none; box-shadow: none; outline: none; }
 
 .clearfix::after, .clearfix::before { content: " "; display: table; }
 
@@ -50,7 +50,7 @@ header { position: relative; padding: 10px 50px 60px 50px; }
 
 .slider__slide:nth-child(3) { background-color: red; }
 
-.slider__slide:nth-child(4) { background-color: blue; }
+.slider__slide:nth-child(4) canvas { border: 1px solid black; height: 100%; width: 100%; }
 
 .slider__slide:nth-child(5) { background-color: #2A2A31; }
 
@@ -58,14 +58,10 @@ header { position: relative; padding: 10px 50px 60px 50px; }
 
 .slider__slide--input form { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
 
-.slider__slide--input form textarea { border: none; max-width: 100%; resize: none; padding: 15px; margin-top: 25px; }
-
-.slider__slide--input form textarea:focus { outline: none; }
-
 .input-group { position: relative; }
 
-.input-group__field { padding: 15px 25px; position: relative; font-size: 18px; border: none; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; }
+.input-group__field { padding: 15px 25px 15px 5px; position: relative; font-size: 18px; border: none; background-color: transparent; border-bottom: 2px solid #A0DF6D; -webkit-transition: all 0.3s ease-in-out; transition: all 0.3s ease-in-out; color: #fff; }
 
 .input-group__field:focus + .input-group__label, .input-group__field.has-value + .input-group__label { bottom: 60px; left: 0; color: #fff; }
 
-.input-group__label { position: absolute; bottom: 15px; left: 25px; pointer-events: none; -webkit-transition: all 0.3s ease; transition: all 0.3s ease; font-style: italic; }
+.input-group__label { position: absolute; bottom: 15px; left: 5px; color: rgba(255, 255, 255, 0.5); pointer-events: none; -webkit-transition: all 0.3s ease-out; transition: all 0.3s ease-out; font-style: italic; font-family: Georgia; }
