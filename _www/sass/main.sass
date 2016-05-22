@@ -75,17 +75,53 @@ header
   overflow: hidden
   &__control
     position: absolute
-    height: 70px
-    width: 110px
-    top: 50%
-    transform: translateY(-50%)
-    background-color: hotpink
+    font-size: 25px
+    top: 0
+    bottom: 0
+    // transform: translateY(-50%)
     z-index: 9999
     cursor: pointer
+    color: $white
+    display: flex
+    justify-content: center
+    align-items: center
     &--previous
-      left: 10px
+      padding: 15px 35px 15px 15px
+      text-align: center
+      left: 0px
+      &:before
+        content: ' '
+        display: block
+        position: absolute
+        height: 100%
+        width: 100%
+        top: 0
+        left: 0
+        z-index: -1
+        opacity: 0
+        background-image: linear-gradient(-90deg, rgba(255,255,255,0.00) 0%, rgba(0,0,0,0.30) 100%)
+        transition: opacity 0.3s ease-in-out
+      &:hover:before
+        opacity: 1
     &--next
-      right: 10px
+      padding: 15px 15px 15px 35px
+      right: 0px
+      text-align: right
+      transition: all 0.3s ease-in-out
+      &:before
+        content: ' '
+        display: block
+        position: absolute
+        height: 100%
+        width: 100%
+        top: 0
+        left: 0
+        z-index: -1
+        opacity: 0
+        background-image: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, rgba(0,0,0,0.30) 100%)
+        transition: opacity 0.3s ease-in-out
+      &:hover:before
+        opacity: 1
   &__slide
     height: 100%
     width: 100%
@@ -180,7 +216,7 @@ header
   max-width: 400px
   background-color: $red
   height: 100%
-  padding: 15px
+  padding: 25px 15px
   text-align: center
   transform: translateX(50px)
   color: $beige
@@ -194,7 +230,7 @@ header
       position: 50%
     border-radius: 50%
     margin: 0px auto
-    box-shadow: 0 0 0 5px $blue
+    box-shadow: 0 0 0 5px $redBold, 0 0 0 10px $beige
   &__name
     h2
       font-size: 35px
@@ -229,15 +265,18 @@ header
       font-size: 26px
       display: block
       padding: 20px
-      color: $beige
+      color: rgba($beige,0.6)
       position: relative
+      transition: color 0.3s ease-in-out
+      &:hover
+        color: $beige
   &__hire-me
     color: $redBold
     display: inline-block
     padding: 25px 45px
     background-color: $beige
     position: relative
-    top: 150px
+    top: 130px
     border-radius: 3px
     box-shadow: 0 17px 10px -10px rgba($black,0.5)
     transition: all 0.3s ease-in-out
