@@ -6,12 +6,16 @@ $black: black
 $white: #fff
 $grey: #D1D1D1
 $greyBold: #9C9C9C
+$blue: #74C4E8
+$beige: #FDF8E3
+$red: #AB2E4C
+$redBold: #471526
 
 // C'est parti !
 
 *
   box-sizing: border-box
-  font-family: 'Didact Gothic', sans-serif
+  font-family: 'PT Sans', sans-serif
 
 .logo
   height: 100px
@@ -62,7 +66,7 @@ header
       transform: translateY(-50%)
 
 .slider
-  height: 550px
+  height: 750px
   max-width: 1100px
   background-color: $greyBold
   margin: 30px auto
@@ -89,7 +93,6 @@ header
     top: 0
     z-index: 1
     // margin: 30px
-    padding: 30px
     position: absolute
     &:nth-child(3)
 
@@ -165,3 +168,80 @@ header
     font:
       style: italic
       family: Georgia
+
+.slider__slide--presentation
+  background-image: linear-gradient(rgba($redBold,0.6),rgba($redBold,0.6)),url('../_sources/MaPhoto.jpg')
+  background:
+    position: 50%
+    size: cover
+    repeat: no-repeat
+.presentation
+  position: relative
+  max-width: 400px
+  background-color: $red
+  height: 100%
+  padding: 15px
+  text-align: center
+  transform: translateX(50px)
+  color: $beige
+  &__avatar
+    height: 100px
+    width: 100px
+    background:
+      image: url('../_sources/MaPhoto.jpg')
+      repeat: no-repeat
+      size: cover
+      position: 50%
+    border-radius: 50%
+    margin: 0px auto
+    box-shadow: 0 0 0 5px $blue
+  &__name
+    h2
+      font-size: 35px
+      margin-bottom: 0
+      font-family: 'Abril Fatface', serif
+    h2,p
+      line-height: 0.8
+    p
+      font-size: 14px
+      color: $redBold
+  &__text
+    text-align: left
+    line-height: 1.8
+    &--emphase
+      color: $beige
+      font-weight: bold
+  &__social
+    height: 100px
+    width: 100%
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 15%
+    ul
+      position: relative
+      top: 50%
+      transform: translateY(-50%)
+    &--item
+      display: inline-block
+      margin: 10px
+    &--links
+      font-size: 26px
+      display: block
+      padding: 20px
+      color: $beige
+      position: relative
+  &__hire-me
+    color: $redBold
+    display: inline-block
+    padding: 25px 45px
+    background-color: $beige
+    position: relative
+    top: 150px
+    border-radius: 3px
+    box-shadow: 0 17px 10px -10px rgba($black,0.5)
+    transition: all 0.3s ease-in-out
+
+    &:hover
+      box-shadow: 0 37px 20px -20px rgba($black,0.5)
+      transform: translate(0,-10px)
