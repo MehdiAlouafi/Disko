@@ -28,6 +28,8 @@ $(function(){
 
         tl.to($('section,footer'),0.3,{opacity:0})
         tl.to($('.main_nav'),0.3, {opacity: 0}, '-=0.3')
+        tl.to($('#title-led'), 0,{innerHTML: "Félicitations !"})
+        tl.to($('#para-led'), 0,{innerHTML: "Tu as fais le konami code !"})
 
         tl.to($logo, 1 , {x: 320 , y: 200})
         tl.to($logo, 1 , {scale: 1.5,ease: Bounce.easeIn})
