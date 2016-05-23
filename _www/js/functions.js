@@ -109,44 +109,44 @@ $(function(){
     $(this).toggleClass('is_open');
     $('.main_nav--media').toggleClass('is_open');
   })
-  // var svgImage = new Image();
-  //   svgImage.src= 'http://image005.flaticon.com/159/svg/136/136262.svg'
-  // const canvas = document.getElementById('canvas'),
-  //     ctx    = canvas.getContext('2d');
-  // var x =  0;
-  // const y = 55;
-  // var speed = 2;
-  //
-  //
-  // function animate() {
-  //
-  //     reqAnimFrame = window.mozRequestAnimationFrame ||
-  //                 window.webkitRequestAnimationFrame ||
-  //                 window.msRequestAnimationFrame     ||
-  //                 window.oRequestAnimationFrame      ||
-  //                 window.RequestAnimationFrame
-  //
-  //                 ;
-  //
-  //     reqAnimFrame(animate);
-  //
-  //     x += speed;
-  //     if(x <= 0 || x >= canvas.width - 20){
-  //         speed = -speed;
-  //     }
-  //     draw();
-  // }
-  //
-  //
-  // function draw() {
-  //     ctx.clearRect(0, 0, canvas.width, canvas.height);
-  //     ctx.drawImage(svgImage,x,y,25,25)
-  // }
-  //     svgImage.onload = function(){
-  //       draw();
-  //
-  //       animate();
-  //
-  //       };
+  var svgImage = new Image();
+    svgImage.src= 'http://image005.flaticon.com/159/svg/136/136262.svg'
+  const canvas = document.getElementById('canvas'),
+      ctx    = canvas.getContext('2d');
+  var x =  0;
+  const y = 55;
+  var speed = 2;
+
+
+  function animate() {
+
+      reqAnimFrame = window.mozRequestAnimationFrame ||
+                  window.webkitRequestAnimationFrame ||
+                  window.msRequestAnimationFrame     ||
+                  window.oRequestAnimationFrame      ||
+                  window.RequestAnimationFrame
+
+                  ;
+
+      reqAnimFrame(animate);
+
+      x += speed;
+      if(x <= 0 || x >= canvas.width - 20){
+          speed = -speed;
+      }
+      draw();
+  }
+
+
+  function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(svgImage,x,y,25,25)
+  }
+      svgImage.onload = function(){
+        draw();
+
+        animate();
+
+        };
 
 })
