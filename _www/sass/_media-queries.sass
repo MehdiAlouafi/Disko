@@ -1,0 +1,100 @@
+@media screen and (max-width: 1065px)
+  .thumbnails__box.thumbnails__box--media
+    margin-top: 20px
+    display: inline-block
+    float: none
+@media screen and (max-width: 320px)
+  .thumbnails__box.thumbnails__box--media
+    width: 310px
+    margin-top: 20px !important
+    float: none !important
+@media screen and (max-width: 500px)
+  .presentation
+    margin-left: 0
+    margin: 0 auto
+@media screen and (max-width: 585px)
+  .presentation
+    margin-left: 0
+    margin: 0 auto
+@media screen and (max-width: 585px)
+  .presentation
+    margin: 0 !important
+@media screen and (max-width: 320px)
+  .presentation__hire-me
+    top: 90px
+  .presentation__social--item
+    margin: 0
+  .presentation__social ul
+    top: 73%
+@media screen and (max-width: 352px)
+  .presentation__social--item
+    margin: 0
+  .presentation__hire-me
+    top: 50px
+@media screen and (max-width: 564px)
+  .main_nav--media,.main_nav--media--menu
+    display: block
+  .header__kicker
+    display: none
+  nav.main_nav
+    display: none
+  .main_nav--media.is_open
+    transform: translateY(55px)
+  .main_nav--media
+    transform: translateY(-100%)
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    background-color: #fff
+    z-index: 5555
+    text-align: center
+    font-size: 28px
+    padding: 20px
+    transition: all 0.3s ease-in-out
+    &__item
+      padding: 15px
+    &__link
+      color: black
+      padding: 15px 25px
+      &:after
+        display: none
+    &--menu
+      position: fixed
+      z-index: 99999
+      top: 0
+      left: 0
+      width: 100%
+      background-color: #fff
+      height: 90px
+      padding: 20px
+      .logo
+        height: 50px
+        width: 50px
+      &__toggle
+        float: right
+        margin-top: -10px
+        cursor: pointer
+        padding: 20px
+        overflow-x: hidden
+      .bars
+        height: 4px
+        width: 35px
+        background-color: black
+        display: block
+        border-radius: 5px
+        transition: all 0.3s ease-in-out
+        &.bars2,
+        &.bars3
+          margin-top: 5px
+      &__toggle.is_open
+
+        .bars2
+          transform: translateX(200%)
+        .bars1
+          transform: translateY(9px) rotate(45deg)
+          transform-origin: 50% 50%
+
+        .bars3
+          transform: translateY(-9px) rotate(-45deg)
+          transform-origin: 50% 50%

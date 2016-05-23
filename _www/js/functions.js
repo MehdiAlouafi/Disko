@@ -92,7 +92,6 @@ $(function(){
     }
   })
   // Ce bout de code permet au textarea de rester avec un fond blanc si et seulement si une valeur y est existante
-
   $('textarea').focusout(function(){
     $textAreaVal = $(this).val();
     if($textAreaVal === ""){
@@ -102,6 +101,11 @@ $(function(){
       console.log('bonjour');
 
     }
+  })
+
+  $('.main_nav--media--menu__toggle').click(function(){
+    $(this).toggleClass('is_open');
+    $('.main_nav--media').toggleClass('is_open');
   })
   // var svgImage = new Image();
   //   svgImage.src= 'http://image005.flaticon.com/159/svg/136/136262.svg'
