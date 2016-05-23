@@ -1,9 +1,13 @@
 'use strict',
 $(function(){
   // check to make sure that the browser can handle window.addEventListener
-  var tl = new TimelineMax(),
-      posX = $(window).height() / 2,
-      posY = $(window).width() / 2;
+  var tl        = new TimelineMax(),
+      posX      = $(window).height() / 2,
+      posY      = $(window).width() / 2,
+      $oval     = $('#Oval-1'),
+      $logo     = $('.logo'),
+      lol = new TimelineMax();
+
   if (window.addEventListener) {
     // create the keys and konami variables
     var keys = [],
@@ -21,8 +25,27 @@ $(function(){
       // and check to see if the user has entered the Konami code
       if (keys.toString() === konami) {
         // do something such as:
+
         tl.to($('section,footer'),0.3,{opacity:0})
-        tl.to($('.logo'), 1 , {x: posX - 30 , y: posY - 30})
+        tl.to($('.main_nav'),0.3, {opacity: 0}, '-=0.3')
+
+        tl.to($logo, 1 , {x: 320 , y: 200})
+        tl.to($logo, 1 , {scale: 1.5,ease: Bounce.easeIn})
+
+        tl.to($oval,0.5,{fill: "#49a2df"})
+        tl.to($oval,0.5,{fill: "#e74c3c"})
+        tl.to($oval,0.5,{fill: "#e67e22"})
+        tl.to($oval,0.5,{fill: "#f39c12"})
+        tl.to($oval,0.5,{fill: "#f1c40f"})
+        tl.to($oval,0.5,{fill: "#d35400"})
+        tl.to($oval,0.5,{fill: "#c0392b"})
+        tl.to($oval,0.5,{fill: "#34495e"})
+        tl.to($oval,0.5,{fill: "#000000"})
+        tl.to($('.to-animate'),0.3,{opacity: 1})
+        lol.set({},{onComplete: function(){tl.reverse(3)}},11)
+        lol.duration();
+
+
         keys = [];
       };
     }, true);

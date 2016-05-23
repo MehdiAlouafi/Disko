@@ -167,3 +167,5 @@ footer p { margin: 0; font-size: 15px; }
   .main_nav--media--menu__toggle.is_open .bars2 { -webkit-transform: translateX(200%); -ms-transform: translateX(200%); transform: translateX(200%); }
   .main_nav--media--menu__toggle.is_open .bars1 { -webkit-transform: translateY(9px) rotate(45deg); -ms-transform: translateY(9px) rotate(45deg); transform: translateY(9px) rotate(45deg); -webkit-transform-origin: 50% 50%; -ms-transform-origin: 50% 50%; transform-origin: 50% 50%; }
   .main_nav--media--menu__toggle.is_open .bars3 { -webkit-transform: translateY(-9px) rotate(-45deg); -ms-transform: translateY(-9px) rotate(-45deg); transform: translateY(-9px) rotate(-45deg); -webkit-transform-origin: 50% 50%; -ms-transform-origin: 50% 50%; transform-origin: 50% 50%; } }
+
+.to-animate { position: fixed; top: 42%; left: 40%; opacity: 0; }
